@@ -112,7 +112,12 @@
             for (id objc in objects) {
                 UIImage *image = (UIImage *)objc;
                 if (image) {
-                    self.img2.image = image;
+                    
+                    self.img2.alpha=0;
+                    [UIView animateWithDuration:0.25 animations:^{
+                        self.img2.image = image;
+                        self.img2.alpha=1;
+                    }];
                 }
             }
         }];
